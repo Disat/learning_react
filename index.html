@@ -1,60 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
+    <title>Document</title>
     <style>
-        body {
-            width: 50%;
-            margin: 0 auto;
-            margin-top: 120px;
+        li{
+            list-style: none;
+            font-size: 26px;
         }
-
-        table {
-            table-layout: auto;
-            width: 100%;
-            border: 1px solid black;
-        }
-
-        td {
-            padding: 5px 0;
-            text-align: center;
-        }
-
-        .head {
-            background: #888;
-            color: #fff;
+        ul{
+            display: flex;
         }
     </style>
 </head>
-
 <body>
-    <main>
-        <h1>Hexadecimal Addition Table</h1>
-        <table>
-        </table>
-    </main>
+<ul>
+    <a href="./hex_addition_table.html"><li>Tools</li></a>
+    <li>placeholder</li>
+    <li>placeholder</li>
+</ul>
 </body>
-<script>
-    let hexTableString = ""
-    for (i = 1; i < 0x10; i++) {
-        if (i == 1) {
-            hexTableString += "<tr class='head'><td></td>"
-            for (k = 1; k < 0x10; k++) {
-                hexTableString += `<td>${k.toString(0x10)}</td>`
-            }
-            hexTableString += "</tr>"
-        }
-        hexTableString += `<tr><td class="head">${i.toString(0x10)}</td>`
-        for (j = 1; j < 0x10; j++) {
-            if (i >= j) {
-                hexTableString += `<td>${(i + j).toString(0x10)}</td>`
-            }
-        }
-        hexTableString += "</tr>"
-    }
-    document.querySelector("table").innerHTML = hexTableString
-    console.log(hexTableString)
-</script>
-
 </html>
